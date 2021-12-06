@@ -21,9 +21,16 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+            form_login:
+                login_path: security_login
+                check_path: security_login
+            
+            logout:
+                path: security_logout
+                target: home
 
-            custom_authenticators:
-                - App\Security\formAuthenticator
+            # custom_authenticators:
+            #     - App\Security\formAuthenticator
 
 
             # activate different ways to authenticate
